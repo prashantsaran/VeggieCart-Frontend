@@ -1,0 +1,20 @@
+export const environment={
+
+register:'https://veggiecart-backend-production.up.railway.app/register',
+sendOtp:'https://veggiecart-backend-production.up.railway.app/sendOTP',
+login:'https://veggiecart-backend-production.up.railway.app/login',
+presence:'https://veggiecart-backend-production.up.railway.app/checkValidity',
+checkAndSendReset:'https://veggiecart-backend-production.up.railway.app/checkReset',
+resetPassword:'https://veggiecart-backend-production.up.railway.app/resetPassword',
+getVegetablesData:'https://veggiecart-backend-production.up.railway.app/getVegetables',
+profileData:'https://veggiecart-backend-production.up.railway.app/profile',
+addIssue:'https://veggiecart-backend-production.up.railway.app/support',
+getIssueList:'https://veggiecart-backend-production.up.railway.app/getTicketInfo',
+getIsLoggedIn:'https://veggiecart-backend-production.up.railway.app/isLoggedIn',
+addToCart:'https://veggiecart-backend-production.up.railway.app/addToCart',
+getCart:'https://veggiecart-backend-production.up.railway.app/getCart',
+deleteCartItem:'https://veggiecart-backend-production.up.railway.app/deleteCartItem',
+searchVegetable:'https://veggiecart-backend-production.up.railway.app/searchVegetable',
+logoutDataClear:'https://veggiecart-backend-production.up.railway.app/logoutDataClear',
+checkEmail:'https://veggiecart-backend-production.up.railway.app/checkEmail',
+};

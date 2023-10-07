@@ -1,0 +1,40 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+            <img src="../assets/logo.png" alt="" width="60" height="60">
+            <h4>VeggieCart</h4>
+
+        <form [formGroup]="search" class="d-flex mx-auto" (ngSubmit)="searchQuery()">
+            <input class="form-control me-2 decorate"  placeholder="Search" aria-label="Search" formControlName="searchbox">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <!-- <div class="container">
+            <div class="inner"> <a routerLink="/about" >About us</a></div>
+            <div class="inner"> <a routerLink="/contact" >Contact us</a> </div>
+        </div> -->
+        <div class="contain">
+            <div *ngIf="isLoggedIn; else elseBlock">
+                <div class="divide">
+                  <a routerLink="/home">
+                    <img src="../assets/logout.png" height="45px" width="45px" class="logo" (click)="logout()">Logout</a>
+                  <a routerLink="/cart" class="logo-link">
+                    <img src="../assets/shoppingCart.png" height="45px" width="45px" class="logo">
+                  </a>
+                    <a routerLink="/support" class="logo-link">
+                      <img src="../assets/help.png" height="45px" width="45px" class="logo">
+                    </a>
+                    <a routerLink="/ticket" class="logo-link">
+                      <img src="../assets/tickets.png" height="45px" width="45px" class="logo">
+                    </a>
+                    <a routerLink="/profile" class="logo-link">
+                      <img src="../assets/user.png" height="45px" width="45px" class="logo">
+                    </a>
+                  </div>
+                  
+        </div>
+        <ng-template #elseBlock>
+        <button class="beautify"  (click)="login()">Login</button>
+            <button class="beautify" (click)="register()">Sign Up</button>
+        </ng-template>
+        </div>
+    </div>
+</nav>

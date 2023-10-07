@@ -1,0 +1,109 @@
+<!-- Section: Design Block -->
+<section class="background-radial-gradient overflow-hidden">
+  <style>
+    .background-radial-gradient {
+      background-color: hsl(218, 41%, 15%);
+      background-image: radial-gradient(650px circle at 0% 0%,
+          hsl(218, 41%, 35%) 15%,
+          hsl(218, 41%, 30%) 35%,
+          hsl(218, 41%, 20%) 75%,
+          hsl(218, 41%, 19%) 80%,
+          transparent 100%),
+        radial-gradient(1250px circle at 100% 100%,
+          hsl(218, 41%, 45%) 15%,
+          hsl(218, 41%, 30%) 35%,
+          hsl(218, 41%, 20%) 75%,
+          hsl(218, 41%, 19%) 80%,
+          transparent 100%);
+    }
+
+    #radius-shape-1 {
+      height: 220px;
+      width: 220px;
+      top: -60px;
+      left: -130px;
+      background: radial-gradient(#44006b, #ad1fff);
+      overflow: hidden;
+    }
+
+    #radius-shape-2 {
+      border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+      bottom: -60px;
+      right: -110px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(#44006b, #ad1fff);
+      overflow: hidden;
+    }
+
+    .bg-glass {
+      background-color: hsla(0, 0%, 100%, 0.9) !important;
+      backdrop-filter: saturate(200%) blur(25px);
+    }
+  </style>
+
+  <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+    <div class="row gx-lg-5 align-items-center mb-5">
+      <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+        <br><br><br><br>
+        <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+          VeggieCart <br />
+          <span style="color: hsl(218, 81%, 75%)"><h3>Farm-Fresh Goodness<br> Delivered to your Doorstep</h3></span>
+        </h1>
+        <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+          Join VeggieCart and embark on a journey of fresh, locally sourced vegetables right at your doorstep.
+         Sign up today to experience the convenience of healthy living.
+        </p>
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+        <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+        <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+        <div class="card bg-glass">
+          <div class="card-body px-4 py-5 px-md-5">
+            <form [formGroup]="registerForm" (ngSubmit)="register()">
+              Enter Email<br>
+              <input type="text" id="email" class="form-control form-control-lg" placeholder="Enter Email" formControlName="email"><br>
+              <button [disabled]="email?.invalid" class="btn btn-primary" type="button" (click)="verifyEmail()">Verify</button><br>
+              <span class="warn" *ngIf="email && email.invalid && email.touched">This field is required</span><br>
+              <span class="alert alert-success responsive-alert" *ngIf="otpSent && !existingUser">
+                OTP sent to {{registerForm.value.email}}
+              </span>
+              <span class="alert alert-warning" *ngIf="existingUser">Account already exist</span>
+              <div *ngIf="emailVerified">
+              <br><br>
+              Enter name<br>
+              <input class="form-control form-control-lg" type="text" id="name" placeholder="Enter Name" formControlName="name">
+              <span class="warn" *ngIf="name && name.invalid && name.touched">This field is required</span>
+              <br><br>
+              Enter Shipping Address<br>
+              <input class="form-control form-control-lg" type="text" id="location" placeholder="Enter Address" formControlName="address">
+              <span class="warn" *ngIf="address && address.invalid && address.touched">This field is required</span>
+              <br><br>
+              Enter Password <br>
+              <input class="form-control form-control-lg" type="password" id="password" placeholder="Password" formControlName="password">
+              <span class="warn" *ngIf="password && password.invalid && password.touched">This field is required</span>
+              <br><br>
+            
+              Enter OTP
+              <input class="form-control form-control-lg" type="number" id="otp" placeholder="Enter OTP" formControlName="otp" [disabled]="!emailVerified">
+              <span class="warn" *ngIf="otp && otp.invalid && otp.touched">This field is required</span>
+              <br>
+              <div class="wrapper">
+                <button type="submit" [disabled]="registerForm.invalid && !emailVerified ||(otp?.value?.toString()?.length !== 6)" class="btn btn-primary">Register</button>
+                <br>
+              </div>
+              <br>
+              <span class="alert alert-success" *ngIf="registered">Account registered<a routerLink="/login">Login</a></span><br>
+              <span class="alert alert-success" *ngIf="invalidOtp">Invalid OTP</span><br>
+              <span class="alert alert-success" *ngIf="existingUser">Account already exist</span><br>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->

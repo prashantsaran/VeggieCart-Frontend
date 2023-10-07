@@ -1,0 +1,31 @@
+.middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .img-responsive {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Media query for small screens (adjust the max-width as needed) */
+  @media (max-width: 768px) {
+    .middle {
+      font-size: 14px; /* Decrease font size for smaller screens */
+    }
+  }
+  .text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* This ensures the container takes the full viewport height. Adjust as needed. */
+  }
+  
+
+  

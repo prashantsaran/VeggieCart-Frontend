@@ -1,0 +1,59 @@
+.decorate{
+    border: 2px solid green;
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+}
+.container{
+  display: flex;
+  justify-content: flex-end;
+  width: fit-content;
+}
+.inner{
+    padding :4px;
+    font-size: 22px;
+}
+.beautify{
+    background-color: aquamarine;
+    margin:4px;
+    border: 2px grey;
+    border-radius: 20px;
+    height: 40px;
+    width: 70px;
+}
+a:hover{
+color: blue;
+}
+button:hover{
+    background-color: tomato;
+}
+.contain{
+    display: flex;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.correct{
+border:0px;
+}
+.divide{
+    display:flex;
+    margin:5px;
+}
+.logo-link {
+    margin-right: 10px; /* Adjust the margin as needed to control spacing */
+    text-decoration: none;
+  }
+
+  
+  .logo {
+    border-radius: 8px;
+    height: 45px;
+    width: 45px;
+    display: inline-block; /* To control spacing with margins */
+    margin: 5px; /* Add margin to control spacing */
+  }
+  

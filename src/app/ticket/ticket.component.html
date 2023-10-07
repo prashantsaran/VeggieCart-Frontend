@@ -1,0 +1,32 @@
+<button class="test">
+  <a routerLink="/home">
+    <img src="assets/back.png" height="25px" width="25px" class="remove">
+  </a>
+</button>
+<div class="container">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Name</th>
+        <th>Ticket ID</th>
+        <th>Issues</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="issue">
+      <tr *ngFor="let ticket of issues">
+        <td>{{ ticket.email }}</td>
+        <td>{{ ticket.name }}</td>
+        <td>{{ ticket.ticketId }}</td>
+        <td>      
+            {{ ticket.issue }}
+        </td>
+        <td>{{ ticket.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="noIssues">
+<h1 class="centerNoIssue">No issues found</h1>
+</div>

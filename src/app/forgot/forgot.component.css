@@ -1,0 +1,11 @@
+.success{
+    color: green;
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.center {
+    display: block;
+    margin: 0 auto;
+  }

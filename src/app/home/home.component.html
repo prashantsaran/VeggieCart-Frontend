@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row">
+    <!-- <h1 style="color:red;text-align: center;" *ngIf="notLoggedIn">Please Login First</h1> -->
+    <div class="col-md-4" *ngFor="let vegetable of vegetablesData">
+      <div class="card mb-4">
+        <img class="card-img-top" [src]="vegetable.image_url" width="290px" height="290px" alt="{{ vegetable.name }} Image">
+        <div class="card-body">
+          <h5 class="card-title">{{ vegetable.name }}</h5>
+          <p class="card-text">{{ vegetable.description }}</p>
+          <p class="card-text">Price: ₹{{ vegetable.price }}</p>
+          <p class="card-text">Category: {{ vegetable.category }}</p>
+          <button class="btn btn-primary" (click)="addToCart(vegetable)" >Add to Cart</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
